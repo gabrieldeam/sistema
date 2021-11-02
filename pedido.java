@@ -17,15 +17,23 @@ public class pedido {
         return valorTotalCalculado;
     }
 
-    /*
-     * public void setPedidoData(int diap, int mesp, int anop){ dia = diap; mes =
-     * mesp; ano = anop; }
-     */
+    public void setPedidoData(int diap, int mesp, int anop) {
+        dia = diap;
+        mes = mesp;
+        ano = anop;
+    }
 
-    /*
-     * public int getPedidoData (){ return dia; return mes; //pode colocar mais de
-     * um return em um get? return ano; }
-     */
+    public int getPedidoDia() {
+        return dia;
+    }
+
+    public int getPedidoMes() {
+        return mes;
+    }
+
+    public int getPedidoAno() {
+        return ano;
+    }
 
     public void setpedidoRemover(int removido) {
         remove = removido;
@@ -39,7 +47,7 @@ public class pedido {
 
         if (getpedidoRemover() == 0) {
             System.out.println("Pedido cadastrado - Código:" + getPedidoID() + " Valor:" + getValorTC());
-            System.out.println("Criado em:" + dia + "/" + mes + "/" + ano); // Tem que criar a data.
+            System.out.println("Criado em:" + getPedidoDia() + "/" + getPedidoMes() + "/" + getPedidoAno());
         } else {
             System.out.println("Status - Foi Removido");
         }
