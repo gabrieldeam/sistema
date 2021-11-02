@@ -1,9 +1,10 @@
 import java.util.Scanner;
 
 class loja {
+    public static pedido p;
+    public static funcionario f;
 
     public static void main(String[] args) {
-        // menuPrincipal();
 
         int op = -1;
         Scanner myObjeto = new Scanner(System.in);
@@ -25,11 +26,11 @@ class loja {
 
             switch (op) {
             case 1:
-                int pedidoID;
+                int pedidoID, codigo;
                 float valorTotalCalculado;
                 int dia, mes, ano;
 
-                pedido infoPedido = new pedido();
+                p = new pedido();
 
                 Scanner pC = new Scanner(System.in);
 
@@ -48,30 +49,28 @@ class loja {
                 System.out.println("Digite o ano de criação do pedido:");
                 ano = pC.nextInt();
 
-                infoPedido.setPedido(pedidoID, valorTotalCalculado);
-                infoPedido.setPedidoData(dia, mes, ano);
-                infoPedido.pedidoCadastrado();
+                p.setPedido(pedidoID, valorTotalCalculado);
+                p.setPedidoData(dia, mes, ano);
+                p.pedidoCadastrado();
                 break;
             case 2:
                 System.out.println("BUSCAR PEDIDO");
-                pedido pbusca = new pedido();
-                pbusca.pedidoCadastrado();
+                p.pedidoCadastrado();
                 break;
             case 3:
-                pedido pRemovido = new pedido();
-
                 System.out.println("REMOVER PEDIDO");
-                pRemovido.pedidoCadastrado();
+                p.pedidoCadastrado();
                 int remove = 1;
                 System.out.println("Status - Foi Removido");
 
-                pRemovido.setpedidoRemover(remove);
+                p.setpedidoRemover(remove);
                 break;
             case 4:
                 String nome;
                 int matricula;
 
-                funcionario infoFuncionario = new funcionario();
+                f = new funcionario();
+
                 Scanner fc = new Scanner(System.in);
 
                 System.out.println("BEM VINDO AO CADASTRO DE USUÁRIOS");
@@ -80,23 +79,19 @@ class loja {
                 System.out.println("Matricula de usuário");
                 matricula = fc.nextInt();
 
-                infoFuncionario.setFuncionario(nome, matricula);
-                infoFuncionario.funcionarioCadastrado();
+                f.setFuncionario(nome, matricula);
+                f.funcionarioCadastrado();
                 break;
             case 5:
                 System.out.println("BUSCAR FUNCIONARIO");
-                funcionario fbusca = new funcionario();
-                fbusca.funcionarioCadastrado();
+                f.funcionarioCadastrado();
                 break;
             case 6:
-                funcionario fRemovido = new funcionario();
                 System.out.println("REMOVER FUNCIONARIO");
-                fRemovido.funcionarioCadastrado();
+                f.funcionarioCadastrado();
                 int removeF = 1;
                 System.out.println("Status - Foi Removido");
-                fRemovido.setFuncionarioRemover(removeF);
-                break;
-            case 0:
+                f.setFuncionarioRemover(removeF);
                 break;
             }
         }
